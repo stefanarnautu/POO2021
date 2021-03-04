@@ -19,7 +19,7 @@ int main()
 	printf("Inm. 4.6*5.2=%d\n", ob.Mul(e, f));
 	printf("Inm. 4.6*5.2*6.1=%d\n", ob.Mul(e, f, m));
 	printf("Adunarea multipla este %d\n", ob.Add(4,1,2,3,4));
-	printf(" ")
+	printf(" ");
 	system("pause");
 	return 0;
 }
