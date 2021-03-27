@@ -1,0 +1,39 @@
+#include "Ford.h"
+#include <stdlib.h>
+Ford::Ford()
+{
+	this->consum = 5;
+	this->viteza = 185;
+	this->capacitate_rez = 35;
+	this->nume = (char*)(malloc(5));
+	strcpy(this->nume, "Ford");
+}
+Ford::~Ford()
+{
+	printf("Am apelat destructor pt Ford\n");
+}
+void Ford::printTot()
+{
+	printf("Ford: consum %d, viteza %d, capacitate rezervor %d %s\n", this->consum, this->viteza, this->capacitate_rez, this->nume);
+}
+float Ford::modifica_timp(int x,float lng)
+{
+	int v = this->viteza;
+	int c = this->consum;
+	if (x == 0 or x == 2)
+	{
+		v -= 15;
+		if (x == 2)
+		{
+			c += 3;
+			v -= 20;
+		}
+	}
+	//printf("%f %f %d %d\n", lng, this->capacitate_rez - c * (lng / 100), v, c);
+	if (this->capacitate_rez - c * (lng / 100) <= 0)
+		return 0;
+	else
+	{
+		return lng / v;
+	}
+}
